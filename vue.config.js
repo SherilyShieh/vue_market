@@ -15,6 +15,7 @@ module.exports = {
     },
     configureWebpack: {
         devServer: {
+            // 解决后台服务于前端服务的跨域问题
             proxy: {
                 "/api": {
                     target: "http://127.0.0.1:3000/",
