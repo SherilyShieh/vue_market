@@ -47,7 +47,7 @@ export default {
   methods: {
     changeHandler(val) {
       this.$router.push(val);
-    }, 
+    },
     logout() {
       this.$store.dispatch('logout')
     }
