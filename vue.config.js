@@ -166,7 +166,7 @@ module.exports = {
                                     title: "Vue2.x实战",
                                     price: "100",
                                     img: "img/04.jpg"
-                                },
+                                }
                             ],
                             ai: [{
                                     id: 1,

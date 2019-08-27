@@ -1,4 +1,4 @@
-import goods from '../service/goods'
+import gs from '../service/goods'
 
 export default {
     state: {
@@ -20,10 +20,10 @@ export default {
         }
     },
     actions: {
-        getGoods({ state, commit }, goods) {
-            if (!state.goodsInfo) {
+        getGoods({ state, commit }) {
+            if (!state.keys.length) {
                 // 没有数据爱去获取
-                goods.getGoodsInfo().then(goodsInfo => {
+                gs.getGoodsInfo().then(goodsInfo => {
                     commit('setGoodsInfo', goodsInfo);
                 })
             }
