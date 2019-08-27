@@ -4,7 +4,7 @@
       <router-view class="child-view"/>
     </transition>
     <cube-tab-bar
-      v-model=""selectLabel
+      v-model="selectLabel"
       :data="tabs"
       @change="changeHandler">
     </cube-tab-bar>
@@ -47,7 +47,7 @@ export default {
   methods: {
     changeHandler(val) {
       this.$router.push(val);
-    }, 
+    },
     logout() {
       this.$store.dispatch('logout')
     }
