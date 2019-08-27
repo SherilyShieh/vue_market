@@ -21,7 +21,7 @@ export default {
     },
     actions: {
         getGoods({ state, commit }) {
-            if (!state.keys.length) {
+            if (!state.goodsInfo.length) {
                 // 没有数据爱去获取
                 gs.getGoodsInfo().then(goodsInfo => {
                     commit('setGoodsInfo', goodsInfo);
