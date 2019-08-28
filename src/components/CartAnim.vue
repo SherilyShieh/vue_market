@@ -1,9 +1,9 @@
 <template>
     <div class="ball-wrap">
         <transition @before-enter="beforeEnter" @enter="enter" @afterEnter="afterEnter">
-            <div class="ball" v-show="show">
+            <div class="ball" v-show="show" :style="pos">
                 <div class="inner">
-                    <div class="cubeic-add"></div>
+                    <div class="cubeic-add" ></div>
                 </div>
             </div>
         </transition>
@@ -16,6 +16,7 @@
         data() {
             return { show: false };
         },
+        props: ['pos'],
         methods: {
             start(el) { // 启动动画借口，传递点击按钮元素
                 this.el = el;
@@ -56,7 +57,7 @@
 
 <style lang="stylus" scoped>
 .ball-wrap {
-    ball {
+    .ball{
         position: fixed;
         left: 50%;
         bottom: 10px;

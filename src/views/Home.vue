@@ -56,7 +56,7 @@ export default {
       // anim.start(el);
 
       // 方式2
-      const anim = this.$create(CartAnim)
+      const anim = this.$create(CartAnim, {pos: {left: '30%', bottom: '16px'}})
       anim.start(el);
       anim.$on('transitionend', anim.remove)
 
