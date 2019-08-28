@@ -6,7 +6,7 @@ export default function(Component, props) {
     const instance = new Vue({
         render: h => {
             // 返回vdom
-            console.log(h(Component, {props}));
+            // console.log(h(Component, {props}));
             return h(Component, {props})
         }
     }).$mount();
