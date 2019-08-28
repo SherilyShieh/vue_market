@@ -1,13 +1,6 @@
 <template>
     <div class="ball-wrap">
-<<<<<<< HEAD
-        <transition
-            @before-enter="beforeEnter"
-            @enter="enter"
-            @afterEnter="afterEnter">
-=======
         <transition @before-enter="beforeEnter" @enter="enter" @afterEnter="afterEnter">
->>>>>>> b65035d7fd2b08741f130a66ac43999fffb61688
             <div class="ball" v-show="show">
                 <div class="inner">
                     <div class="cubeic-add"></div>

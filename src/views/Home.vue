@@ -14,21 +14,26 @@
     </cube-slide>
 
     <!-- 商品列表 -->
-    <good-list :data="goods"></good-list>
+    <!-- <good-list :data="goods" @cartanim="$refs.ca.start($event)"></good-list> -->
+    <good-list :data="goods" @cartanim="startAnim" ></good-list>
+
+
+    <!-- <cart-anim ref="ca"></cart-anim> -->
   </div>
 
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
 import GoodList from '@/components/GoodList.vue'
-import { mapState, mapActions, mapGetters } from 'vuex'
+import CartAnim from '@/components/CartAnim.vue';
+import { mapState, mapActions, mapGetters } from 'vuex';
+
 export default {
   name: 'home',
   components: {
-    // HelloWorld
-    GoodList
+    GoodList,
+    CartAnim
   },
   created() {
     this.getGoods()
@@ -40,7 +45,22 @@ export default {
     ...mapGetters(['goods'])
   },
   methods: {
-    ...mapActions(['getGoods'])
+    ...mapActions(['getGoods']),
+    startAnim(el) {
+      // 创建小球动画实例，开始动画
+      // const anim = this.$createCartAnim({
+      //   onTransitionend() {
+      //     anim.remove();
+      //   }
+      // });
+      // anim.start(el);
+
+      // 方式2
+      const anim = this.$create(CartAnim)
+      anim.start(el);
+      anim.$on('transitionend', anim.remove)
+
+    }
   }
 }
 </script>

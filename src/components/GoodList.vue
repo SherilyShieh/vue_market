@@ -1,6 +1,6 @@
 <template>
     <div>
-
+       <button @click.stop.prevent="addCart($event)">add</button>
     </div>
 </template>
 
@@ -8,7 +8,12 @@
     export default {
         data() {
             return {};
-        }
+        },
+        methods: {
+            addCart(event) {
+                this.$emit('cartanim', event.target);
+            }
+        },
     }
 </script>
 
